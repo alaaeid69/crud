@@ -1,0 +1,67 @@
+body{
+    font-family: "Pacifico", cursive;
+    background-color: #F7ECDE;
+}
+h1{
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 60px;
+    position: relative;
+    z-index: 1;
+}
+.head h1::after {
+    content: "";
+    position: absolute;
+    width:25%;
+    height: 30%;
+    bottom: 0;
+    left: 38%;
+    background-color: #FEC260;
+    z-index: -1;
+    transition: all .5s;
+}
+.head h1:hover::after{
+ height:60%;
+ 
+}
+.head , .caption{
+    border-bottom: 2px black dotted ;
+}
+.caption-title  h2{
+     font-size: 25px;
+    font-weight: 900;
+    line-height: 26px;
+   
+}
+.caption-title h2{
+    font-family: "Righteous", cursive;
+}
+
+.caption-title{
+   background: linear-gradient( to right, rgba(60,165,92,1) 36%, rgba(181,172,73,1) 54%);
+   -webkit-text-fill-color: transparent;
+ -webkit-background-clip: text;
+    
+}
+dialog{
+    font-family: "Righteous", cursive;
+    width: 30%;
+    border: 0;
+}
+
+form , table{
+    font-family: "PT Sans Caption", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+  .form-control  { 
+    background-color:#F7ECDE;
+}
+input.form-control{
+    background-color: #fff;
+}
+.heading h3{
+    font-size: 16px;
+    font-weight: 700;
+}

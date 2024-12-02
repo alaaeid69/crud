@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMark</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&display=swap" rel="stylesheet">           
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&display=swap" rel="stylesheet">
+
+
+             <!--css links -->
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class=" w-75 m-auto my-5 py-2 text-center ">
+    <div class="head pb-5 ">
+        <h1 class=" mb-4">Bookmarker</h1>
+    </div>
+    <div class="caption my-4 pb-5">
+        <div class="caption-title">
+            <i class="fa-solid fa-bookmark  "></i>
+        <h2 class="d-inline-block">Bookmark your favorite sites </h2>
+        <i class="fa-solid fa-bookmark "></i>
+        </div>
+        
+        <form class="form-control text-start border-0">
+           
+          <label for="bookMarkName" class="d-block " >
+            <i class="fa-solid fa-file-signature p-2 pb-3"></i>
+            Site Name
+            </label>
+          <input type="text" name="siteName" id="bookMarkName" placeholder="Bookmark Name" class="form-control">
+
+          <label for="bookMarkUrl" class="d-block mt-4 "  >
+            <i class="fa-solid fa-link  p-2 pb-3"></i>
+            Site URL
+            </label>
+          <input type="text" name="" id="bookMarkUrl" placeholder="Website URL" class="form-control" oninput="validateSiteValue()">
+            <div class="text-center mt-5">
+                <button class="btn btn-danger px-5 py-2 border rounded-4 sub-btn " id="submit-btn" type="button">Submit</button>
+            </div>
+       </form>
+        <dialog  class="text-start model bg-white rounded-3 " id="model" >
+         <div class=" rounded-circle bg-danger  me-2 d-inline-block " style="height: 20px; width: 20px;"></div>
+         <div class=" rounded-circle bg-secondary me-2 d-inline-block " style="height: 20px; width: 20px;"></div>
+         <div class=" rounded-circle bg-success  me-2 d-inline-block " style="height: 20px; width: 20px;"></div>
+         <div >
+            <h6 class="lead">Site Name or Url is not valid, Please follow the rules below :</h6>
+            <p class="lead">Site URL must be a valid one:
+                <p class="fw-light">Site name must contain at least 3 characters</p>
+              <p  class="fw-light">1-the site Url should start with https://</p>
+               <p  class="fw-light">2-write the name of Website</p>
+               <p  class="fw-light">  3-the site url should end with dot then com or chomre or any word that have at least 2 chars</p>
+            </p>
+         </div>
+         <button class="btn btn-outline-danger close">Close</button>
+        </dialog>
+       <!--
+         <dialog class="d-flex justify-content-center align-items-center flex-column model " id="model1" >
+            <div class="bg-white border border-2 rounded-circle d-flex justify-content-center align-items-center" style="height: 70px; width: 70px;">
+                <i class="fa-solid fa-check text-success fs-3 "></i>
+              </div>
+              
+                <p class="py-2"> the Site Name already existed!</p>
+                <button class="btn btn-outline-danger close">Close</button>
+             
+        </dialog>
+        -->
+       
+
+    </div>
+
+<table class="w-100  bg-white" >
+    <thead class=" bg-white m-2" >
+        <tr>
+            <th class="p-2">Index</th>
+            <th class="p-2">Website Name</th>
+            <th class="p-2">Visit</th>
+            <th class="p-2">Delete</th>
+        </tr>
+    </thead>
+      <tbody id="demo" >
+     
+      </tbody>
+    
+</table>
+
+</div>
+
+
+    
+   
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--js links-->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
